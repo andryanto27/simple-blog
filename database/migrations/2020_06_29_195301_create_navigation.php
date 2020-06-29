@@ -25,6 +25,7 @@ class CreateNavigation extends Migration
             $table->integer('group')->default(0)->index();
             $table->integer('type')->default(0)->index();
             $table->integer('status')->default(0)->index();
+            $table->integer('sort')->default(0)->index();
             $table->timestamps();
             $table->softDeletes();
             $table->engine = 'InnoDB';
