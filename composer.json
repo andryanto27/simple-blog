@@ -6,9 +6,19 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "cviebrock/eloquent-sluggable": "4.3.*",
         "fideloper/proxy": "~3.3",
+        "jrean/laravel-user-verification": "5.0",
+        "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.3.0",
+        "mews/captcha": "^2.3",
+        "milon/barcode": "5.1",
+        "owen-it/laravel-auditing": "8.x",
+        "spatie/laravel-permission": "^2.1",
+        "tymon/jwt-auth": "dev-develop",
+        "webpatser/laravel-countries": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
