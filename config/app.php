@@ -171,6 +171,8 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,        
         Collective\Html\HtmlServiceProvider::class,
         Webpatser\Countries\CountriesServiceProvider::class,
+        OwenIt\Auditing\AuditingServiceProvider::class,
+        Jrean\UserVerification\UserVerificationServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -234,6 +236,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Countries' => Webpatser\Countries\CountriesFacade::class,
+        'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
     ],
 
 ];
