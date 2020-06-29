@@ -8,6 +8,7 @@
         "php": ">=7.0.0",
         "cviebrock/eloquent-sluggable": "4.3.*",
         "fideloper/proxy": "~3.3",
+        "htmlmin/htmlmin": "^7.0",
         "jrean/laravel-user-verification": "5.0",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
