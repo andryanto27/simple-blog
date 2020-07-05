@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
 
         Schema::create('persons', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->string('image')->nullable()->index();
+            $table->string('img_thumbnail')->nullable()->index();
             $table->string('first_name')->nullable()->index();
             $table->string('last_name')->nullable()->index();
             $table->integer('gender')->default(0)->index();
