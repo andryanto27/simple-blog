@@ -3,12 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Support\Arr;
+use OwenIt\Auditing\Contracts\Auditable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\Role;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject, Auditable
 {
-    use Notifiable, HasRoles;
+    use Notifiable, HasRoles, \OwenIt\Auditing\Auditable;
 
     /**
      * The attributes that are mass assignable.
@@ -35,4 +39,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims() {
+        return [];
+    }
+
+    public function transformAudit(array $data): array {
+        if (Arr::has($data, 'new_values.role_id')) {
+            $data['old_values']['role_name'] = Role::find($this->getOriginal('role_id'))->name;
+            $data['new_values']['role_name'] = Role::find($this->getAttribute('role_id'))->name;
+        }
+
+        return $data;
+    }
+
 }

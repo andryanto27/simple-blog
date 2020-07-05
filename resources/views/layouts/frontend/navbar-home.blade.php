@@ -9,10 +9,10 @@
                 </a>
                 <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
                     <li>
-                        <a href="index.html#about">About</a>
+                        <a href="{{ url('/#about') }}">About</a>
                     </li>
                     <li>
-                        <a href="{{ route('contact') }}">Contact</a>
+                        <a href="{{ url('/#contact') }}">Contact</a>
                     </li>
                     <li>
                         <a href="{{ route('portfolio.index') }}">Portfolio</a>

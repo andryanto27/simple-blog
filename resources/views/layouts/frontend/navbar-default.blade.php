@@ -8,11 +8,11 @@
                     <img src="{{ asset('frontend/images/logo.svg') }}" alt="" width="85">
                 </a>
                 <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
-                    <li class="{{ \Route::current()->getName() == 'about' ? 'active' : null }}">
-                        <a href="{{ route('about') }}">About</a>
+                    <li>
+                        <a href="{{ url('/#about') }}">About</a>
                     </li>
-                    <li class="{{ \Route::current()->getName() == 'contact' ? 'active' : null }}">
-                        <a href="{{ route('contact') }}">Contact</a>
+                    <li>
+                        <a href="{{ url('/#contact') }}">Contact</a>
                     </li>
                     <li class="{{ \Route::current()->getName() == 'portfolio.index' ? 'active' : null }}">
                         <a href="{{ route('portfolio.index') }}">Portfolio</a>
