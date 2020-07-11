@@ -8,6 +8,7 @@ use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Person;
+use App\Models\Country;
 
 class DatabaseSeeder extends Seeder {
 
@@ -28,6 +29,18 @@ class DatabaseSeeder extends Seeder {
             $this->command->info('Application has been installed.');
         }else{
             $this->command->info('Application already installed.');
+        }
+    }
+
+    private function seedCountry(){
+        Country::where("id", "<>", 0)->delete();
+        $json_countries = file_get_contents(storage_path('seeds/countries.json'));    
+        $countries = json_decode($json_countries, true);
+        foreach($countries as $c){
+            Country::create([
+                'code'=> $c["code"],
+                'name'=> $c["name"],
+            ]);
         }
     }
 
@@ -80,6 +93,9 @@ class DatabaseSeeder extends Seeder {
         $this->command->info('Defaults roles added successfully');
         factory(Contact::class, 50)->create();
         $this->command->info('Some contacts data seeded.');
+        // Seed Other
+        $this->seedCountry();
+        // End
         $this->command->warn('All done :)');
 
         $admin = User::where("username", self::ADMIN_USERNAME)->first();

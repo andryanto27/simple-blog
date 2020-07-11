@@ -182,6 +182,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
     ],
 
@@ -237,6 +238,9 @@ return [
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Countries' => Webpatser\Countries\CountriesFacade::class,
         'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
+        'CommonHelper' => App\Helpers\CommonHelper::class,
+        'MenuHelper' => App\Helpers\MenuHelper::class,
+        'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
     ],
 
 ];

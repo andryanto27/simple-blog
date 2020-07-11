@@ -1,5 +1,5 @@
 <div class="pull-right hidden-xs">
-    <b>Version</b> 2.4.18
+    <b>Version</b> {{ env('APP_VERSION', '1.0') }}
 </div>
-<strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+<strong>Copyright &copy; {{ date('Y') }} <a target="_blank" href="https://github.com/andryanto27">{{ env('APP_NAME', 'Laravel') }}</a>.</strong> All rights
 reserved.

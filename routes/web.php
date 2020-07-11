@@ -28,6 +28,14 @@ Route::group(['middleware' => ['SessionTimeout', 'XSS', 'auth']], function ($rou
     // ** Backend ** //
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/', '\App\Http\Controllers\Backend\AdminController@home')->name('admin.home');
+        Route::group(['prefix' => 'personal'], function () {
+            Route::get('profile', '\App\Http\Controllers\Backend\UserAccountController@profile')->name('admin.personal.profile');
+            Route::get('password', '\App\Http\Controllers\Backend\UserAccountController@password')->name('admin.personal.password');
+            Route::get('account', '\App\Http\Controllers\Backend\UserAccountController@account')->name('admin.personal.account');
+            Route::post('account', '\App\Http\Controllers\Backend\UserAccountController@accountUpdate')->name('admin.personal.account.update');
+            Route::post('profile', '\App\Http\Controllers\Backend\UserAccountController@profileUpdate')->name('admin.personal.profile.update');
+            Route::post('password', '\App\Http\Controllers\Backend\UserAccountController@passwordUpdate')->name('admin.personal.password.update');
+        });
         Route::group(['prefix' => 'dashboards'], function () {
 
         });

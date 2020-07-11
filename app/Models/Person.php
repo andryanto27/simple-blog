@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+// Relations
+use App\Models\User;
 
 class Person extends Model {
 
     public $timestamps = false;
     public $incrementing = false;
+    protected $primaryKey = 'user_id';
 
     protected $table = 'persons';
     protected $fillable = [
@@ -29,8 +32,8 @@ class Person extends Model {
 
     public static function Genders(){
         return array(
-            "MALE",
-            "FEMALE"
+            "Male",
+            "Female"
         );
     }
 
@@ -45,11 +48,15 @@ class Person extends Model {
 
     public static function MaritalStatus(){
         return array(
-            "SINGLE",
-            "MARRIED",
-            "DIVORCE",
-            "WIDOWED"
+            "Single",
+            "Married",
+            "Divorce",
+            "Widowed"
         );
+    }
+
+    public function User() {
+        return $this->belongsTo(User::class, "user_id");
     }
 
 }

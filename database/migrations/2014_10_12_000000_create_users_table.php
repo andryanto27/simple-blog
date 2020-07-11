@@ -32,9 +32,9 @@ class CreateUsersTable extends Migration
             $table->string('img_thumbnail')->nullable()->index();
             $table->string('first_name')->nullable()->index();
             $table->string('last_name')->nullable()->index();
-            $table->integer('gender')->default(0)->index();
-            $table->integer('blood_type')->default(0)->index();
-            $table->integer('marital_status')->default(0)->index();
+            $table->integer('gender')->default(0)->nullable()->index();
+            $table->integer('blood_type')->default(0)->nullable()->index();
+            $table->integer('marital_status')->default(0)->nullable()->index();
             $table->string('postal_code')->nullable()->index();
             $table->string('fax_number')->nullable()->index();
             $table->string('birth_place')->nullable()->index();

@@ -1,0 +1,27 @@
+[
+    {
+        "label": "Setting",
+        "icon": "fa fa-gear",
+        "url": "",
+        "childs": [
+            {
+                "label": "Audit Trail",
+                "icon": "",
+                "url": "audits.index",
+                "childs": []
+            },
+            {
+                "label": "User",
+                "icon": "",
+                "url": "users.index",
+                "childs": []
+            },
+            {
+                "label": "Role",
+                "icon": "",
+                "url": "roles.index",
+                "childs": []
+            }
+        ]
+    }
+]
